@@ -1,3 +1,16 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "curly": ["error", "all"],
+    "simple-import-sort/imports": [
+      "error",
+      { "groups": [["^\\u0000", "^node:", "^@?\\w", "^", "^\\."]] }
+    ],
+    "simple-import-sort/exports": "error"
+  }
 }

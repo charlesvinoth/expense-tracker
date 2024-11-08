@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Icon } from '@/components/base'
 import useAppLayoutStore from '@/layouts/app/store/useAppLayoutStore'
@@ -16,13 +15,7 @@ const Logout = () => {
           <Icon name='icon-[material-symbols--logout-rounded]' />
 
           {!isDrawerCollapsed && (
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className='whitespace-nowrap font-medium'
-            >
-              Log out
-            </motion.span>
+            <span className='whitespace-nowrap font-medium'>Log out</span>
           )}
         </Link>
       </li>

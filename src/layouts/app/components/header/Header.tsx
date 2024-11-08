@@ -1,6 +1,7 @@
 import DrawerToggle from './components/DrawerToggle'
 import PageTitle from './components/PageTitle'
 import ThemeToggle from './components/ThemeToggle'
+import User from './components/User'
 
 const Header = ({}) => {
   return (
@@ -12,6 +13,7 @@ const Header = ({}) => {
 
       <div className='flex items-center gap-2'>
         <ThemeToggle />
+        <User />
       </div>
     </header>
   )

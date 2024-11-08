@@ -9,7 +9,7 @@ type AppLayoutStore = {
 
 const useAppLayoutStore = create<AppLayoutStore>()((set) => ({
   isDrawerOpen: false,
-  isDrawerCollapsed: true,
+  isDrawerCollapsed: false,
   setDrawerOpen: () =>
     set((state) => ({
       isDrawerOpen: !state.isDrawerOpen,

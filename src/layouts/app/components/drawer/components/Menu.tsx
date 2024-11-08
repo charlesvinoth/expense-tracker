@@ -38,18 +38,6 @@ const Menu = () => {
       label: 'Budgets',
       route: '/budgets',
     },
-    {
-      icon: 'icon-[material-symbols--settings-outline-rounded]',
-      activeIcon: 'icon-[material-symbols--settings-rounded]',
-      label: 'Settings',
-      route: '/settings',
-    },
-    {
-      icon: 'icon-[material-symbols--help-outline-rounded]',
-      activeIcon: 'icon-[material-symbols--help-rounded]',
-      label: 'Help',
-      route: '/help',
-    },
   ]
 
   return (

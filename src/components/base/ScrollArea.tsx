@@ -19,12 +19,7 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({
       type={type}
       className={cn('overflow-hidden', className)}
     >
-      <RadixScrollArea.Viewport
-        className={cn('size-full rounded-[inherit]', {
-          'pr-2': orientation === 'vertical',
-          'pb-2': orientation === 'horizontal',
-        })}
-      >
+      <RadixScrollArea.Viewport className='size-full rounded-[inherit]'>
         {children}
       </RadixScrollArea.Viewport>
 

@@ -28,9 +28,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
       <Link
         href={route}
         className={cn(
-          'flex items-center gap-2 rounded-md p-2 outline-none hover:bg-gray-150 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-850 dark:focus-visible:outline-primary-400',
+          'flex items-center gap-2 rounded-md p-2 outline-none hover:bg-gray-100 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-800 dark:focus-visible:outline-primary-400',
           {
-            'bg-gray-200 dark:bg-gray-800': isActive,
+            'bg-gray-100 dark:bg-gray-800': isActive,
           },
         )}
       >
@@ -44,7 +44,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         />
 
         {showLabel && (
-          <div
+          <span
             className={cn('whitespace-nowrap font-medium transition-colors', {
               'text-primary-650 dark:text-primary-350': isActive,
               'text-gray-600 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300':
@@ -52,7 +52,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
             })}
           >
             {label}
-          </div>
+          </span>
         )}
       </Link>
     </li>

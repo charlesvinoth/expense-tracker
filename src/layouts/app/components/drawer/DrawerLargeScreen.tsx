@@ -1,3 +1,6 @@
+'use client'
+
+import { ScrollArea } from '@/components/base'
 import useAppLayoutStore from '@/layouts/app/store/useAppLayoutStore'
 import { cn } from '@/utils/cn'
 import Logo from './components/Logo'
@@ -9,17 +12,22 @@ const DrawerLargeScreen = () => {
 
   return (
     <div
-      className={cn('flex h-dvh flex-col gap-y-6 transition-[width]', {
-        'w-52': !isDrawerCollapsed,
-        'w-16': isDrawerCollapsed,
-      })}
+      className={cn(
+        'hidden h-dvh flex-col gap-y-6 bg-white transition-[width] dark:bg-gray-900 xl:flex',
+        {
+          'w-52': !isDrawerCollapsed,
+          'w-16': isDrawerCollapsed,
+        },
+      )}
     >
       <Logo />
 
-      <nav className='flex flex-1 flex-col justify-between'>
-        <Menu />
-        <Logout />
-      </nav>
+      <ScrollArea className='h-[calc(100dvh-4rem)]'>
+        <nav className='flex h-full flex-col justify-between gap-10'>
+          <Menu />
+          <Logout />
+        </nav>
+      </ScrollArea>
     </div>
   )
 }

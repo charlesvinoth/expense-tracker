@@ -10,7 +10,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
     <div className='flex'>
       <Drawer />
 
-      <main className='flex-1 bg-white dark:bg-gray-900'>
+      <main className='flex-1 bg-gray-50 dark:bg-gray-950'>
         <Header />
         <div className='container mx-auto'>{children}</div>
       </main>

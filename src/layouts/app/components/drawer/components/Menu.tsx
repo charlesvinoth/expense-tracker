@@ -41,7 +41,7 @@ const Menu = () => {
   ]
 
   return (
-    <ul className='h-full space-y-3 px-3.5'>
+    <ul className='my-1 h-full space-y-3 px-3.5'>
       {menus.map((menu) => (
         <MenuItem
           key={menu.label}

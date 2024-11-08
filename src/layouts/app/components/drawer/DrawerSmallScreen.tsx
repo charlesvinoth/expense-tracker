@@ -12,7 +12,7 @@ const DrawerSmallScreen = () => {
 
   return (
     <Sheet open={isDrawerOpen} setOpen={setDrawerOpen}>
-      <div className='flex h-dvh w-52 flex-col gap-y-6'>
+      <div className='flex h-dvh w-52 flex-col gap-y-5'>
         <Logo />
 
         <ScrollArea className='h-[calc(100dvh-4rem)]'>

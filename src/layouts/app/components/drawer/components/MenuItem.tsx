@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Icon } from '@/components/base'
@@ -44,7 +45,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
         />
 
         {showLabel && (
-          <span
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className={cn('whitespace-nowrap font-medium transition-colors', {
               'text-primary-650 dark:text-primary-350': isActive,
               'text-gray-600 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300':
@@ -52,7 +55,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
             })}
           >
             {label}
-          </span>
+          </motion.span>
         )}
       </Link>
     </li>

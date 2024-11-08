@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { ScrollArea } from '@/components/base'
 import useAppLayoutStore from '@/layouts/app/store/useAppLayoutStore'
 import { cn } from '@/utils/cn'
@@ -11,13 +12,11 @@ const DrawerLargeScreen = () => {
   const { isDrawerCollapsed } = useAppLayoutStore()
 
   return (
-    <div
+    <motion.div
+      initial={{ width: '4rem' }}
+      animate={{ width: isDrawerCollapsed ? '4rem' : '13rem' }}
       className={cn(
-        'hidden h-dvh flex-col gap-y-6 bg-white transition-[width] dark:bg-gray-900 xl:flex',
-        {
-          'w-52': !isDrawerCollapsed,
-          'w-16': isDrawerCollapsed,
-        },
+        'hidden h-dvh flex-col gap-y-5 bg-white dark:bg-gray-900 xl:flex',
       )}
     >
       <Logo />
@@ -28,7 +27,7 @@ const DrawerLargeScreen = () => {
           <Logout />
         </nav>
       </ScrollArea>
-    </div>
+    </motion.div>
   )
 }
 

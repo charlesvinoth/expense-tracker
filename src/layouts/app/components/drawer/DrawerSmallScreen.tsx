@@ -1,4 +1,7 @@
+'use client'
+
 import { Sheet } from '@/components/base'
+import { ScrollArea } from '@/components/base'
 import useAppLayoutStore from '@/layouts/app/store/useAppLayoutStore'
 import Logo from './components/Logo'
 import Logout from './components/Logout'
@@ -9,13 +12,15 @@ const DrawerSmallScreen = () => {
 
   return (
     <Sheet open={isDrawerOpen} setOpen={setDrawerOpen}>
-      <div className='flex h-dvh w-52 flex-col gap-y-6'>
+      <div className='flex h-dvh w-52 flex-col gap-y-5'>
         <Logo />
 
-        <nav className='flex flex-1 flex-col justify-between'>
-          <Menu />
-          <Logout />
-        </nav>
+        <ScrollArea className='h-[calc(100dvh-4rem)]'>
+          <nav className='flex h-full flex-col justify-between gap-10'>
+            <Menu />
+            <Logout />
+          </nav>
+        </ScrollArea>
       </div>
     </Sheet>
   )

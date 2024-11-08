@@ -38,22 +38,10 @@ const Menu = () => {
       label: 'Budgets',
       route: '/budgets',
     },
-    {
-      icon: 'icon-[material-symbols--settings-outline-rounded]',
-      activeIcon: 'icon-[material-symbols--settings-rounded]',
-      label: 'Settings',
-      route: '/settings',
-    },
-    {
-      icon: 'icon-[material-symbols--help-outline-rounded]',
-      activeIcon: 'icon-[material-symbols--help-rounded]',
-      label: 'Help',
-      route: '/help',
-    },
   ]
 
   return (
-    <ul className='h-full space-y-3 px-3.5'>
+    <ul className='my-1 h-full space-y-3 px-3.5'>
       {menus.map((menu) => (
         <MenuItem
           key={menu.label}

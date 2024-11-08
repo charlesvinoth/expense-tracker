@@ -15,7 +15,7 @@ const Logout = () => {
           <Icon name='icon-[material-symbols--logout-rounded]' />
 
           {!isDrawerCollapsed && (
-            <div className='whitespace-nowrap font-medium'>Log out</div>
+            <span className='whitespace-nowrap font-medium'>Log out</span>
           )}
         </Link>
       </li>

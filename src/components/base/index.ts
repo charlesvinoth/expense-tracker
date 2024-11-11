@@ -8,6 +8,7 @@ import MenuItem from './menu/MenuItem'
 import MenuSeparator from './menu/MenuSeparator'
 import ScrollArea from './ScrollArea'
 import Sheet from './sheet/Sheet'
+import Tooltip from './Tooltip'
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   MenuSeparator,
   ScrollArea,
   Sheet,
+  Tooltip,
 }

@@ -1,4 +1,4 @@
-import { Dialog } from '@ark-ui/react/dialog'
+import { Dialog as DialogPrimitive } from '@ark-ui/react/dialog'
 import { Portal } from '@ark-ui/react/portal'
 import { cn } from '@/utils/cn'
 
@@ -16,11 +16,11 @@ const Sheet: React.FC<SheetProps> = ({
   setOpen,
 }) => {
   return (
-    <Dialog.Root open={open} onOpenChange={() => setOpen(!open)}>
+    <DialogPrimitive.Root open={open} onOpenChange={() => setOpen(!open)}>
       <Portal>
-        <Dialog.Backdrop className='fixed inset-0 z-10 h-dvh w-dvw bg-gray-500/60 transition-opacity' />
-        <Dialog.Positioner className='fixed inset-0 z-20'>
-          <Dialog.Content
+        <DialogPrimitive.Backdrop className='fixed inset-0 z-10 h-dvh w-dvw bg-gray-500/60 transition-opacity' />
+        <DialogPrimitive.Positioner className='fixed inset-0 z-20'>
+          <DialogPrimitive.Content
             className={cn(
               'absolute h-dvh bg-white will-change-[opacity,transform] dark:bg-gray-900',
               {
@@ -32,10 +32,10 @@ const Sheet: React.FC<SheetProps> = ({
             )}
           >
             {children}
-          </Dialog.Content>
-        </Dialog.Positioner>
+          </DialogPrimitive.Content>
+        </DialogPrimitive.Positioner>
       </Portal>
-    </Dialog.Root>
+    </DialogPrimitive.Root>
   )
 }
 

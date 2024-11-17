@@ -15,6 +15,7 @@ interface ButtonProps {
   suffixIconClass?: string
   variant?: ButtonVariant
   className?: string
+  type?: 'button' | 'submit'
   onClick?: (e: React.MouseEvent) => void
 }
 
@@ -30,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({
   suffixIconClass,
   variant = 'primary',
   className,
+  type = 'button',
   onClick,
 }) => {
   const buttonClassName = cn(
@@ -48,6 +50,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       disabled={disabled || loading}
       className={buttonClassName}
+      type={type}
       onClick={onClick}
     >
       {loading && <Icon name='icon-[gg--spinner]' className='animate-spin' />}

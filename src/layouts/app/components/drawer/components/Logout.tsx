@@ -10,7 +10,7 @@ const Logout = () => {
       <li className='group'>
         <Link
           href='/login'
-          className='flex items-center gap-2 rounded-md p-2 text-error-600 outline-none hover:bg-gray-150 hover:transition-colors focus-visible:outline-primary-600 dark:text-error-400 dark:hover:bg-gray-850 dark:focus-visible:outline-primary-400'
+          className='flex items-center gap-2 rounded-md p-2 text-tertiary-400 outline-none hover:bg-gray-150 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-850 dark:focus-visible:outline-primary-400'
         >
           <Icon name='icon-[material-symbols--logout-rounded]' />
 

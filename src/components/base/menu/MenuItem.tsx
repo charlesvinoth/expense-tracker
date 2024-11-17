@@ -6,7 +6,7 @@ interface MenuItemProps {
   value: string
   label: string
   icon?: string
-  color?: 'default' | 'error'
+  color?: 'default' | 'tertiary'
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -26,7 +26,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
           className={cn({
             'text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-400':
               color === 'default',
-            'text-error-600 dark:text-error-400': color === 'error',
+            'text-tertiary-400': color === 'tertiary',
           })}
         />
       )}
@@ -35,7 +35,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         className={cn('flex-1', {
           'text-gray-700 group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-200':
             color === 'default',
-          'text-error-600 dark:text-error-400': color === 'error',
+          'text-tertiary-400': color === 'tertiary',
         })}
       >
         {label}

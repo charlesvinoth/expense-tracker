@@ -1,6 +1,10 @@
 import Button from './button/Button'
 import IconButton from './button/IconButton'
 import Icon from './Icon'
+import InputCheckbox from './input/InputCheckbox'
+import InputField from './input/InputField'
+import InputPassword from './input/InputPassword'
+import InputText from './input/InputText'
 import Logo from './logo/Logo'
 import LogoMark from './logo/LogoMark'
 import Menu from './menu/Menu'
@@ -14,6 +18,10 @@ export {
   Button,
   Icon,
   IconButton,
+  InputCheckbox,
+  InputField,
+  InputPassword,
+  InputText,
   Logo,
   LogoMark,
   Menu,

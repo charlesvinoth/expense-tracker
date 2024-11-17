@@ -1,4 +1,4 @@
-import * as RadixScrollArea from '@radix-ui/react-scroll-area'
+import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 import { cn } from '@/utils/cn'
 
 interface ScrollAreaProps {
@@ -15,25 +15,28 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({
   type = 'auto',
 }) => {
   return (
-    <RadixScrollArea.Root
+    <ScrollAreaPrimitive.Root
       type={type}
       className={cn('overflow-hidden', className)}
     >
-      <RadixScrollArea.Viewport className='size-full rounded-[inherit]'>
+      <ScrollAreaPrimitive.Viewport
+        asChild
+        className='size-full rounded-[inherit]'
+      >
         {children}
-      </RadixScrollArea.Viewport>
+      </ScrollAreaPrimitive.Viewport>
 
-      <RadixScrollArea.Scrollbar
+      <ScrollAreaPrimitive.Scrollbar
         className={cn('flex touch-none select-none p-0.5 transition-colors', {
           'h-full w-2': orientation === 'vertical',
           'h-2 flex-col': orientation === 'horizontal',
         })}
         orientation={orientation}
       >
-        <RadixScrollArea.Thumb className='relative flex-1 rounded-full bg-gray-400 dark:bg-gray-600' />
-      </RadixScrollArea.Scrollbar>
-      <RadixScrollArea.Corner className='bg-transparent' />
-    </RadixScrollArea.Root>
+        <ScrollAreaPrimitive.Thumb className='relative flex-1 rounded-full bg-gray-400 dark:bg-gray-600' />
+      </ScrollAreaPrimitive.Scrollbar>
+      <ScrollAreaPrimitive.Corner className='bg-transparent' />
+    </ScrollAreaPrimitive.Root>
   )
 }
 

@@ -13,7 +13,7 @@ const DrawerLargeScreen = () => {
   return (
     <div
       className={cn(
-        'hidden h-dvh flex-col gap-y-5 bg-white transition-[width] dark:bg-gray-900 xl:flex',
+        'hidden h-dvh flex-col gap-y-5 border-r border-gray-100 bg-gray-50 transition-[width] dark:border-gray-850 dark:bg-gray-950 xl:flex',
         {
           'w-52': !isDrawerCollapsed,
           'w-16': isDrawerCollapsed,

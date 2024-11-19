@@ -6,6 +6,7 @@ import { IconButton } from '@/components/base'
 import InputField from './InputField'
 
 interface InputPasswordProps {
+  name: string
   label: string
   description?: string
   required?: boolean
@@ -14,11 +15,13 @@ interface InputPasswordProps {
   disabled?: boolean
   placeholder?: string
   value?: string
+  defaultValue?: string
   className?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const InputPassword: React.FC<InputPasswordProps> = ({
+  name,
   label,
   required,
   description,
@@ -27,6 +30,7 @@ const InputPassword: React.FC<InputPasswordProps> = ({
   disabled,
   placeholder,
   value,
+  defaultValue,
   className,
   onChange,
 }) => {
@@ -48,8 +52,10 @@ const InputPassword: React.FC<InputPasswordProps> = ({
       className={className}
     >
       <FieldPrimitive.Input
+        name={name}
         type={showPassword ? 'text' : 'password'}
         value={value}
+        defaultValue={defaultValue}
         placeholder={placeholder}
         className='h-full w-full bg-transparent px-1 outline-none placeholder:text-gray-500'
         onChange={onChange}

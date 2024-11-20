@@ -29,6 +29,6 @@ export const LoginSchema = v.object({
   password: v.pipe(
     v.string('Password must be a string.'),
     v.nonEmpty('Password is required.'),
-    v.minLength(8, 'Password must be between 8 and 256 characters long.'),
+    v.minLength(8, 'Password must be 8 characters long.'),
   ),
 })

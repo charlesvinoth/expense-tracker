@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { useActionState } from 'react'
 import { InitialState } from '@/actions/auth/login/definitions'

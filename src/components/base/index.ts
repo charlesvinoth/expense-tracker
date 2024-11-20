@@ -12,6 +12,7 @@ import MenuItem from './menu/MenuItem'
 import MenuSeparator from './menu/MenuSeparator'
 import ScrollArea from './ScrollArea'
 import Sheet from './sheet/Sheet'
+import Toast from './toast/Toast'
 import Tooltip from './Tooltip'
 
 export {
@@ -29,5 +30,6 @@ export {
   MenuSeparator,
   ScrollArea,
   Sheet,
+  Toast,
   Tooltip,
 }

@@ -1,23 +1,23 @@
 'use server'
 
 import { produce } from 'immer'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-import { AppwriteException } from 'node-appwrite'
+import { AppwriteException, ID } from 'node-appwrite'
 import * as v from 'valibot'
 import { createAdminClient } from '@/lib/appwrite'
-import { InitialState, LoginSchema, LoginState } from './definitions'
+import { InitialState, SignUpSchema, SignUpState } from './definitions'
 
-export default async function login(
-  previousState: LoginState,
+export default async function signup(
+  previousState: SignUpState,
   formData: FormData,
-): Promise<LoginState> {
+): Promise<SignUpState> {
+  const name = formData.get('name') as string
   const email = formData.get('email') as string
   const password = formData.get('password') as string
 
   const result = v.safeParse(
-    LoginSchema,
-    { email, password },
+    SignUpSchema,
+    { name, email, password },
     { abortPipeEarly: true },
   )
 
@@ -25,8 +25,11 @@ export default async function login(
     const errors = v.flatten(result.issues).nested
 
     const nextState = produce(InitialState, (draft) => {
+      draft.name = name
       draft.email = email
       draft.password = password
+
+      draft.errors.name = errors?.name ? errors.name[0] : ''
       draft.errors.email = errors?.email ? errors.email[0] : ''
       draft.errors.password = errors?.password ? errors.password[0] : ''
     })
@@ -36,26 +39,18 @@ export default async function login(
 
   try {
     const { account } = await createAdminClient()
-    const session = await account.createEmailPasswordSession(email, password)
-    const cookieStore = await cookies()
-
-    cookieStore.set('appwrite-session', session.secret, {
-      httpOnly: true,
-      sameSite: 'strict',
-      secure: true,
-      expires: new Date(session.expire),
-      path: '/',
-    })
+    await account.create(ID.unique(), email, password, name)
   } catch (error) {
-    let message = 'Login failed. Please try again.'
+    let message = 'SignUp failed. Please try again.'
 
     if (error instanceof AppwriteException) {
-      if (error.type === 'user_invalid_credentials') {
-        message = 'Invalid login details. Please try again.'
+      if (error.type === 'user_already_exists') {
+        message = 'A user with the same email already exists.'
       }
     }
 
     const nextState = produce(InitialState, (draft) => {
+      draft.name = name
       draft.email = email
       draft.password = password
       draft.appwriteError = message
@@ -64,5 +59,5 @@ export default async function login(
     return nextState
   }
 
-  redirect('/')
+  redirect('/login?initial=true')
 }

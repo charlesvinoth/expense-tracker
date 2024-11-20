@@ -1,10 +1,28 @@
-import { Button } from '@/components/base'
+'use client'
+
+import { useSearchParams } from 'next/navigation'
+import { useEffect } from 'react'
+import { Button, Toast } from '@/components/base'
+import { createToast } from '@/utils/createToast'
 import Description from '../components/Description'
 import RedirectLink from '../components/RedirectLink'
 import Title from '../components/Title'
 import LoginForm from './components/LoginForm'
 
 const LoginPage = () => {
+  const params = useSearchParams()
+
+  useEffect(() => {
+    if (params.get('initial')) {
+      createToast({
+        title: 'Success!',
+        description:
+          'Your account has been created successfully. Please log in to continue.',
+        type: 'success',
+      })
+    }
+  }, [params])
+
   return (
     <div>
       <Title>Welcome back!</Title>
@@ -24,6 +42,8 @@ const LoginPage = () => {
         route='/sign-up'
         routeLabel='Sign up'
       />
+
+      <Toast />
     </div>
   )
 }

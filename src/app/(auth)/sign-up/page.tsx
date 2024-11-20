@@ -1,7 +1,8 @@
-import { Button, InputPassword, InputText } from '@/components/base'
+import { Button } from '@/components/base'
 import Description from '../components/Description'
 import RedirectLink from '../components/RedirectLink'
 import Title from '../components/Title'
+import SignUpForm from './components/SignUpForm'
 
 const SignUpPage = () => {
   return (
@@ -9,13 +10,7 @@ const SignUpPage = () => {
       <Title>Create your account</Title>
       <Description>Get started with budgeting and savings.</Description>
 
-      <form>
-        <InputText name='name' label='Name' className='mb-4' />
-        <InputText name='email' label='Email' className='mb-4' />
-        <InputPassword name='password' label='Password' className='mb-6' />
-
-        <Button type='submit' label='Create account' className='w-full' />
-      </form>
+      <SignUpForm />
 
       <Button
         variant='secondary'

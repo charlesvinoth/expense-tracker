@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import logout from '@/actions/auth/logout'
 import avatarImg from '@/assets/avatar.png'
 import { Menu, MenuItem, MenuSeparator } from '@/components/base'
 
@@ -9,6 +10,11 @@ const User = () => {
   const router = useRouter()
 
   const handleSelect = (menu: string) => {
+    if (menu === 'logout') {
+      logout()
+      return
+    }
+
     router.push(menu)
   }
 
@@ -56,7 +62,7 @@ const User = () => {
       />
       <MenuItem
         color='tertiary'
-        value='login'
+        value='logout'
         label='Log out'
         icon='icon-[material-symbols--logout-rounded]'
       />

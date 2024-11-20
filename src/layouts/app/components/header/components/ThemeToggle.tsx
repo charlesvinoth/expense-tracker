@@ -22,8 +22,8 @@ const ThemeToggle = () => {
     <IconButton
       icon={
         theme === 'dark'
-          ? 'icon-[material-symbols--light-mode-rounded]'
-          : 'icon-[material-symbols--dark-mode-rounded]'
+          ? 'icon-[material-symbols--light-mode-outline-rounded]'
+          : 'icon-[material-symbols--dark-mode-outline-rounded]'
       }
       variant='tertiary'
       className='transition-none'

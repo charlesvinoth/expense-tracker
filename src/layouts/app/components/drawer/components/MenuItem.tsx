@@ -6,17 +6,11 @@ import { cn } from '@/utils/cn'
 
 interface MenuItemProps {
   icon: string
-  activeIcon: string
   label: string
   route: string
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({
-  icon,
-  activeIcon,
-  label,
-  route,
-}) => {
+const MenuItem: React.FC<MenuItemProps> = ({ icon, label, route }) => {
   const pathname = usePathname()
   const isActive = pathname === route
 
@@ -28,16 +22,16 @@ const MenuItem: React.FC<MenuItemProps> = ({
       <Link
         href={route}
         className={cn(
-          'flex items-center gap-2 rounded-md p-2 outline-none hover:bg-gray-100 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-800 dark:focus-visible:outline-primary-400',
+          'flex items-center gap-2 rounded-md p-2 outline-none hover:bg-gray-100 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-900 dark:focus-visible:outline-primary-400',
           {
-            'bg-gray-100 dark:bg-gray-800': isActive,
+            'bg-primary-600/[0.075] dark:bg-secondary-300/[0.075]': isActive,
           },
         )}
       >
         <Icon
-          name={isActive ? activeIcon : icon}
+          name={icon}
           className={cn('transition-colors', {
-            'text-primary-600 dark:text-primary-400': isActive,
+            'text-primary-600 dark:text-secondary-300': isActive,
             'text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-400':
               !isActive,
           })}

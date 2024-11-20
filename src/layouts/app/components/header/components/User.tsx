@@ -1,8 +1,23 @@
+'use client'
+
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import logout from '@/actions/auth/logout'
 import avatarImg from '@/assets/avatar.png'
 import { Menu, MenuItem, MenuSeparator } from '@/components/base'
 
 const User = () => {
+  const router = useRouter()
+
+  const handleSelect = (menu: string) => {
+    if (menu === 'logout') {
+      logout()
+      return
+    }
+
+    router.push(menu)
+  }
+
   const trigger = (
     <Image
       src={avatarImg}
@@ -15,7 +30,7 @@ const User = () => {
   )
 
   return (
-    <Menu trigger={trigger}>
+    <Menu trigger={trigger} onSelect={handleSelect}>
       <div className='flex items-center gap-3 p-2'>
         <Image
           src={avatarImg}
@@ -36,17 +51,17 @@ const User = () => {
       <MenuSeparator />
 
       <MenuItem
-        value='profile'
+        value='settings'
         label='Profile'
         icon='icon-[material-symbols--person-outline]'
       />
       <MenuItem
-        value='privacy'
+        value='privacy-policy'
         label='Privacy Policy'
         icon='icon-[material-symbols--shield-outline-rounded]'
       />
       <MenuItem
-        color='error'
+        color='tertiary'
         value='logout'
         label='Log out'
         icon='icon-[material-symbols--logout-rounded]'

@@ -48,4 +48,10 @@
     --gray-900: 19 22 27;
     --gray-950: 12 14 18;
   }
+
+  /* ark ui */
+
+  [data-part='arrow'] {
+    --arrow-size: 8px;
+  }
 }

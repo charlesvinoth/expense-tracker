@@ -3,7 +3,7 @@ import { Icon } from '..'
 import getButtonClasses from './styles'
 import { ButtonColor, ButtonSize, ButtonVariant } from './types'
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: ButtonColor
   icon?: string
   iconClass?: string
@@ -15,8 +15,6 @@ interface ButtonProps {
   suffixIconClass?: string
   variant?: ButtonVariant
   className?: string
-  type?: 'button' | 'submit'
-  onClick?: (e: React.MouseEvent) => void
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -31,8 +29,7 @@ const Button: React.FC<ButtonProps> = ({
   suffixIconClass,
   variant = 'primary',
   className,
-  type = 'button',
-  onClick,
+  ...props
 }) => {
   const buttonClassName = cn(
     getButtonClasses(variant, color),
@@ -50,8 +47,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       disabled={disabled || loading}
       className={buttonClassName}
-      type={type}
-      onClick={onClick}
+      {...props}
     >
       {loading && <Icon name='icon-[gg--spinner]' className='animate-spin' />}
       {!loading && icon && <Icon name={icon} className={iconClass} />}

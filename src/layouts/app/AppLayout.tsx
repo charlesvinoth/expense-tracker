@@ -1,19 +1,14 @@
+import Content from './components/Content'
 import Drawer from './components/drawer/Drawer'
-import Header from './components/header/Header'
-
 interface AppLayoutProps {
   children: React.ReactNode
 }
 
 const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   return (
-    <div className='flex'>
+    <div>
       <Drawer />
-
-      <main className='flex-1'>
-        <Header />
-        <div className='container mx-auto'>{children}</div>
-      </main>
+      <Content>{children}</Content>
     </div>
   )
 }

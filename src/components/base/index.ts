@@ -12,6 +12,14 @@ import MenuItem from './menu/MenuItem'
 import MenuSeparator from './menu/MenuSeparator'
 import ScrollArea from './ScrollArea'
 import Sheet from './sheet/Sheet'
+import Table from './table/Table'
+import Tbody from './table/Tbody'
+import Td from './table/Td'
+import Th from './table/Th'
+import Thead from './table/Thead'
+import Tr from './table/Tr'
+import Tab from './tabs/Tab'
+import Tabs from './tabs/Tabs'
 import Toast from './toast/Toast'
 import Tooltip from './Tooltip'
 
@@ -30,6 +38,14 @@ export {
   MenuSeparator,
   ScrollArea,
   Sheet,
+  Tab,
+  Table,
+  Tabs,
+  Tbody,
+  Td,
+  Th,
+  Thead,
   Toast,
   Tooltip,
+  Tr,
 }

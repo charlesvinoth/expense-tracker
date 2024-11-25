@@ -20,6 +20,7 @@ const ThemeToggle = () => {
 
   return (
     <IconButton
+      size='sm'
       icon={
         theme === 'dark'
           ? 'icon-[material-symbols--light-mode-outline-rounded]'

@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'bg-gray-50 bg-white text-sm text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-50',
+          'bg-gray-50 bg-white text-sm text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-50',
           inter.className,
         )}
       >

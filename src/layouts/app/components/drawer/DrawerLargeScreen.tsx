@@ -13,7 +13,7 @@ const DrawerLargeScreen = () => {
   return (
     <div
       className={cn(
-        'hidden h-dvh flex-col gap-y-5 border-r border-gray-100 bg-gray-50 transition-[width] dark:border-gray-850 dark:bg-gray-950 xl:flex',
+        'fixed inset-0 hidden h-dvh flex-col gap-y-5 border-r border-gray-200 bg-gray-50 transition-[width] dark:border-gray-800 dark:bg-gray-900 xl:flex',
         {
           'w-52': !isDrawerCollapsed,
           'w-16': isDrawerCollapsed,
@@ -22,7 +22,7 @@ const DrawerLargeScreen = () => {
     >
       <Logo />
 
-      <ScrollArea className='h-[calc(100dvh-4rem)]'>
+      <ScrollArea asChild className='h-[calc(100dvh-4rem)]'>
         <nav className='flex h-full flex-col justify-between gap-10'>
           <Menu />
           <Logout />

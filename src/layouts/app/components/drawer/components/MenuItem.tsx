@@ -22,7 +22,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ icon, label, route }) => {
       <Link
         href={route}
         className={cn(
-          'flex items-center gap-2 rounded-md p-2 outline-none hover:bg-gray-100 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-900 dark:focus-visible:outline-primary-400',
+          'flex items-center gap-2 rounded-md p-2 outline-none hover:bg-gray-200 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-800 dark:focus-visible:outline-primary-400',
           {
             'bg-primary-600/[0.075] dark:bg-secondary-300/[0.075]': isActive,
           },

@@ -11,9 +11,9 @@ export default function getButtonClasses(
       variant: {
         primary: 'shadow-sm',
         secondary:
-          'border bg-white border-gray-200 text-gray-700 hover:bg-gray-100 hover:text-gray-800 active:bg-gray-150 dark:border-gray-750 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-850 dark:hover:text-gray-200 dark:active:bg-gray-800',
+          'border bg-white border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-800 active:bg-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-850 dark:hover:text-gray-200 dark:active:bg-gray-800',
         tertiary:
-          'text-gray-600 hover:bg-gray-100 hover:text-gray-700 active:bg-gray-150 dark:text-gray-400 dark:hover:bg-gray-850 dark:hover:text-gray-300 dark:active:bg-gray-800',
+          'text-gray-600 hover:bg-gray-100 hover:text-gray-700 active:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-850 dark:hover:text-gray-300 dark:active:bg-gray-800',
         quaternary: '',
       },
       color: {

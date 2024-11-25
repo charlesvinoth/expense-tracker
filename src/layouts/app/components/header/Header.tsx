@@ -5,13 +5,13 @@ import User from './components/User'
 
 const Header = ({}) => {
   return (
-    <header className='flex h-16 items-center justify-between px-4'>
+    <header className='flex h-16 items-center justify-between px-6 xl:px-10'>
       <div className='flex items-center gap-2 md:gap-4'>
         <DrawerToggle />
         <PageTitle />
       </div>
 
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center gap-4'>
         <ThemeToggle />
         <User />
       </div>

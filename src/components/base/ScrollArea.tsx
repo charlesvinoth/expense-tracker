@@ -6,6 +6,7 @@ interface ScrollAreaProps {
   className?: string
   orientation?: 'vertical' | 'horizontal'
   type?: 'auto' | 'hover'
+  asChild?: boolean
 }
 
 const ScrollArea: React.FC<ScrollAreaProps> = ({
@@ -13,6 +14,7 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({
   className,
   orientation = 'vertical',
   type = 'auto',
+  asChild,
 }) => {
   return (
     <ScrollAreaPrimitive.Root
@@ -20,7 +22,7 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({
       className={cn('overflow-hidden', className)}
     >
       <ScrollAreaPrimitive.Viewport
-        asChild
+        asChild={asChild}
         className='size-full rounded-[inherit]'
       >
         {children}

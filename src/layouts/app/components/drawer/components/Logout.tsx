@@ -8,7 +8,7 @@ const Logout = () => {
   return (
     <ul className='mb-4 px-3.5'>
       <li
-        className='flex cursor-pointer items-center gap-2 rounded-md p-2 text-tertiary-400 outline-none hover:bg-gray-150 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-850 dark:focus-visible:outline-primary-400'
+        className='flex cursor-pointer items-center gap-2 rounded-md p-2 text-tertiary-400 outline-none hover:bg-gray-200 hover:transition-colors focus-visible:outline-primary-600 dark:hover:bg-gray-800 dark:focus-visible:outline-primary-400'
         onClick={logout}
       >
         <Icon name='icon-[material-symbols--logout-rounded]' />
